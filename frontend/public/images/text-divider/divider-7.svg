@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="400" height="8">
+  <g transform="translate(0 -1044.3622)">
+    <path id="a" fill="#000" fill-opacity="1" stroke="none" d="M186.84375 1046.1747S136.5 1048.8622 46.5 1048.8622c90 0 140.34375 2.6875 140.34375 2.6875s4.98697-2.4986 19.65625-2.6875c-14.66928-.1889-19.65625-2.6875-19.65625-2.6875z"/>
+    <path id="b" fill="none" stroke="#000" stroke-width="1" d="M5 1048.8622h195"/>
+    <path d="M202.5 1048.8622a2.5 2.5 0 1 1-5 0 2.5 2.5 0 1 1 5 0z"/>
+    <use xlink:href="#a" width="400" height="20" transform="matrix(-1 0 0 1 400 0)"/>
+    <use xlink:href="#b" width="400" height="20" transform="matrix(-1 0 0 1 400 0)"/>
+  </g>
+</svg>
