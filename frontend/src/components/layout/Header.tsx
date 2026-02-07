@@ -63,7 +63,7 @@ export function Header() {
                             height={40}
                             alt="Главная"
                             title="Главная"
-                            className="w-[140px] h-auto sm:w-[160px] md:w-[200px]"
+                            className="w-35 h-auto sm:w-40 md:w-50"
                         />
                     </Link>
 

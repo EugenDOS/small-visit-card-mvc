@@ -1,16 +1,6 @@
-'use client'
-
-import { useState } from 'react'
 import Image from "next/image";
 
 export function Contacts() {
-    const [language, setLanguage] = useState('Русский')
-
-    const languages = [
-        { code: 'ru', name: 'Русский' },
-        { code: 'en', name: 'English' },
-        { code: 'de', name: 'Deutsch' },
-    ]
 
     return (
         <section id="contacts" className="py-16 md:py-24 bg-[#6B4546]">
@@ -42,8 +32,8 @@ export function Contacts() {
                                 <Image
                                     src={"images/contacts/map-point-icon.svg"}
                                     alt=""
-                                    width="40"
-                                    height="40"
+                                    width={40}
+                                    height={40}
                                     className="brightness-0 invert"
                                 />
                             </div>
@@ -65,14 +55,14 @@ export function Contacts() {
                         >
                             <div className="shrink-0 ">
                                 <Image
-                                    src={"images/social-networks/telegram-minimal-white-icon.svg"}
+                                    src="images/social-networks/telegram-minimal-white-icon.svg"
                                     alt=""
-                                    width="40"
-                                    height="40"
+                                    width={40}
+                                    height={40}
                                 />
                             </div>
                             <div className="flex-1">
-                                <h3 className="text-xl font-bold text-white mb-2">Записаться на занятие, оставить вопрос или отзыв</h3>
+                                <h3 className="text-xl font-bold text-white mb-2">Записаться на занятие, задать вопрос или оставить отзыв</h3>
                                 <p className="text-[#B3A1A1] text-base leading-relaxed">
                                     Вы всегда можете в нашем Telegram-боте, кликайте)
                                 </p>

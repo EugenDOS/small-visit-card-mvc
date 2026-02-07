@@ -5,7 +5,7 @@ export function Location() {
     return (
         <section id="location" className="py-16 md:py-24 bg-[#F8F5E8]">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                {/* Header */}
+                {/* Заголовок */}
                 <div className="mb-12 md:mb-16">
                     <h2 className="text-4xl md:text-5xl font-bold text-center text-black mb-6 md:mb-8">
                         Где проходят тренировки
@@ -20,9 +20,9 @@ export function Location() {
                     </h3>
                 </div>
 
-                {/* Bento Grid */}
+                {/* Карточки в формате "Bento Grid" */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:auto-rows-fr">
-                    {/* Large block - Indoor Arena */}
+                    {/* Крупный блок — крытый плац */}
                     <div className="md:col-span-2 md:row-span-2 relative overflow-hidden rounded-2xl shadow-lg group h-[400px] md:h-auto md:min-h-[500px]">
                         <Image
                             src="/images/location/indoor-riding-ground-2.webp"
@@ -30,7 +30,7 @@ export function Location() {
                             fill
                             className="object-cover transition-transform duration-500 group-hover:scale-105"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                        <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent" />
                         <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
                             <h4 className="text-2xl md:text-3xl font-bold text-white mb-3 md:mb-4">
                                 Независимость от погоды
@@ -41,15 +41,15 @@ export function Location() {
                         </div>
                     </div>
 
-                    {/* Medium block - Outdoor Arena */}
-                    <div className="relative overflow-hidden rounded-2xl shadow-lg group h-[300px] md:h-auto md:min-h-[245px]">
+                    {/* Средний блок — открытый плац */}
+                    <div className="relative overflow-hidden rounded-2xl shadow-lg group h-75 md:h-auto md:min-h-61.25">
                         <Image
                             src="/images/location/outdoor-riding-ground.webp"
                             alt="Открытый плац"
                             fill
                             className="object-cover transition-transform duration-500 group-hover:scale-105"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                        <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent" />
                         <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
                             <h4 className="text-xl md:text-2xl font-bold text-white mb-2 md:mb-3">
                                 Свежий воздух и природа
@@ -61,7 +61,7 @@ export function Location() {
                     </div>
 
 
-                    {/* Small block - Rest Area */}
+                    {/* Маленький блок — зона отдыха и тёплые раздевалки */}
                     <div className="relative overflow-hidden rounded-2xl shadow-lg group h-55 md:h-auto md:min-h-61.25 bg-linear-to-br from-[#A0826D] to-[#8B7355]">
                         <div className="absolute inset-0 flex flex-col justify-center items-center text-center p-6 group-hover:scale-105 transition-transform duration-300">
                             <div className="flex gap-2">

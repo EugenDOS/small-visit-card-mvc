@@ -71,9 +71,9 @@ export function FAQ() {
                                     {faq.question}
                                 </span>
                                 {openIndex === index ? (
-                                    <ChevronUp className="w-6 h-6 text-[#6B4546] flex-shrink-0" strokeWidth={2} />
+                                    <ChevronUp className="w-6 h-6 text-[#6B4546] shrink-0" strokeWidth={2} />
                                 ) : (
-                                    <ChevronDown className="w-6 h-6 text-[#6B4546] flex-shrink-0" strokeWidth={2} />
+                                    <ChevronDown className="w-6 h-6 text-[#6B4546] shrink-0" strokeWidth={2} />
                                 )}
                             </button>
 
