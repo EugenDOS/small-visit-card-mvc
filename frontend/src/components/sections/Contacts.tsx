@@ -72,9 +72,9 @@ export function Contacts() {
                                 />
                             </div>
                             <div className="flex-1">
-                                <h3 className="text-xl font-bold text-white mb-2">Telegram-бот</h3>
+                                <h3 className="text-xl font-bold text-white mb-2">Записаться на занятие, оставить вопрос или отзыв</h3>
                                 <p className="text-[#B3A1A1] text-base leading-relaxed">
-                                    Для записи, вопросов и отзывов
+                                    Вы всегда можете в нашем Telegram-боте, кликайте)
                                 </p>
                             </div>
                         </a>

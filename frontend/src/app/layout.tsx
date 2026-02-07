@@ -12,8 +12,8 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-    title: 'Школа верховой езды',
-    description: 'КСК "Свирель" — Школа верховой езды',
+    title: 'Клуб любителей верховой езды',
+    description: 'Профессиональное обучение верховой езде для взрослых и детей',
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

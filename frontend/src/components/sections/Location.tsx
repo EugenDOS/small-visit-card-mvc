@@ -1,4 +1,4 @@
-import {Coffee, Armchair, Shirt} from 'lucide-react'
+import { Coffee, Armchair } from 'lucide-react'
 import Image from 'next/image'
 
 export function Location() {
@@ -60,29 +60,19 @@ export function Location() {
                         </div>
                     </div>
 
-                    {/* Small block - Warm Changing Rooms */}
-                    <div className="relative overflow-hidden rounded-2xl shadow-lg bg-linear-to-br from-[#8B7355] to-[#6B5844] p-6 md:p-8 flex flex-col justify-center items-center text-center group hover:shadow-xl transition-all duration-300 h-50 md:h-auto md:min-h-61.25">
-                        <div className="absolute inset-0 flex flex-col justify-center items-center text-center p-6 group-hover:scale-105 transition-transform duration-300">
-                            <Shirt className="w-14 h-14 text-white/90 mb-3 group-hover:scale-110 transition-transform duration-300" />
-                            <h4 className="text-lg md:text-xl font-bold text-white relative z-10 mb-2">
-                                Теплые раздевалки
-                            </h4>
-                            <p className="text-sm text-white/80 relative z-10">
-                                Комфортные условия для переодевания
-                            </p>
-                        </div>
-                    </div>
-
 
                     {/* Small block - Rest Area */}
-                    <div className="relative overflow-hidden rounded-2xl shadow-lg group h-50 md:h-auto md:min-h-61.25 bg-linear-to-br from-[#A0826D] to-[#8B7355]">
+                    <div className="relative overflow-hidden rounded-2xl shadow-lg group h-55 md:h-auto md:min-h-61.25 bg-linear-to-br from-[#A0826D] to-[#8B7355]">
                         <div className="absolute inset-0 flex flex-col justify-center items-center text-center p-6 group-hover:scale-105 transition-transform duration-300">
-                            <Armchair className="w-14 h-14 text-white/90 mb-3 group-hover:scale-110 transition-transform duration-300" />
+                            <div className="flex gap-2">
+                                <Coffee className="w-14 h-14 text-white/90 mb-3 group-hover:scale-110 transition-transform duration-300" />
+                                <Armchair className="w-14 h-14 text-white/90 mb-3 group-hover:scale-110 transition-transform duration-300" />
+                            </div>
                             <h4 className="text-lg md:text-xl font-bold text-white relative z-10 mb-2">
-                                Зона отдыха
+                                Теплые раздевалки с зоной отдыха
                             </h4>
                             <p className="text-sm text-white/80 relative z-10">
-                                Уютное место для расслабления
+                                Комфортные условия для переодевания с уютным местом для расслабления
                             </p>
                         </div>
                     </div>

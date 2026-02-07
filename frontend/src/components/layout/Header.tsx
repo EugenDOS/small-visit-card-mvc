@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 import Image from "next/image";
-import {FAQ} from "@/components/sections/FAQ";
 
 export function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -12,19 +11,17 @@ export function Header() {
 
     /* Набор ссылок в панели навигации */
     const menuItems = [
-        { label: 'НАПРАВЛЕНИЯ', href: '#directions' }, // Секция "Где проходят тренировки"
-        { label: 'ТРЕНЕРЫ', href: '#coaches' },        // Секция "А я смогу?"
-        { label: 'ЛОКАЦИЯ', href: '#location' },       // Секция с тренерами
-        { label: 'ГАЛЕРЕЯ', href: '#gallery' },        // Секция с фото
-        { label: 'ЦЕНЫ', href: '#pricing' },           // Секция "Услуги и цены"
-        { label: 'ОТЗЫВЫ', href: '#reviews' },         // Секция с отзывами
-        { label: 'FAQ', href: '#faq' },                // Секция FAQ
-        { label: 'КОНТАКТЫ', href: '#contacts' },      // Футер
+        { label: 'НАПРАВЛЕНИЯ', href: '#directions' },
+        { label: 'ТРЕНЕРЫ', href: '#coaches' },
+        { label: 'ЛОКАЦИЯ', href: '#location' },
+        { label: 'ГАЛЕРЕЯ', href: '#gallery' },
+        { label: 'ЦЕНЫ', href: '#pricing' },
+        { label: 'ОТЗЫВЫ', href: '#reviews' },
+        { label: 'FAQ', href: '#faq' },
+        { label: 'КОНТАКТЫ', href: '#contacts' },
     ]
 
-
     useEffect(() => {
-
         const handleScroll = () => {
             const sections = menuItems.map(item => item.href.substring(1))
             let foundSection = false
@@ -41,7 +38,6 @@ export function Header() {
                 }
             }
 
-            // Если ни одна секция не активна (например, в Hero), убираем подсветку
             if (!foundSection) {
                 setActiveSection('')
             }
@@ -57,16 +53,17 @@ export function Header() {
 
     return (
         <header className="fixed top-0 left-0 right-0 z-50 bg-[#6B4546] shadow-md">
-            <div className="mx-auto max-w-7xl ">
-                <div className="flex items-center justify-between gap-x-10 h-20 md:h-24">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6">
+                <div className="flex items-center justify-between gap-x-4 sm:gap-x-10 h-20 md:h-24">
                     {/* Кликабельный логотип (возвращает в корень сайта) */}
-                    <Link href="/" className="flex items-center gap-3 text-white hover:opacity-80 transition-opacity">
+                    <Link href="/" className="flex items-center gap-3 text-white hover:opacity-80 transition-opacity flex-shrink-0">
                         <Image
-                            src="/images/header/logo.png"
-                            width={300}
-                            height={60}
+                            src="/images/header/logo-2.png"
+                            width={160}
+                            height={40}
                             alt="Главная"
                             title="Главная"
+                            className="w-[140px] h-auto sm:w-[160px] md:w-[200px]"
                         />
                     </Link>
 
@@ -88,7 +85,7 @@ export function Header() {
                     {/* Кнопка-гамбургер для мобильной навигационной панели */}
                     <button
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                        className="lg:hidden text-white p-2"
+                        className="lg:hidden text-white p-2 flex-shrink-0"
                         aria-label="Toggle menu"
                     >
                         {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
