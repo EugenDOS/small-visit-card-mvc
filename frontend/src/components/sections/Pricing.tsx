@@ -1,3 +1,5 @@
+import PriceCard from '@/components/ui/PriceCard';
+
 export function Pricing() {
     const prices = [
         {
@@ -36,27 +38,13 @@ export function Pricing() {
                 {/* Сетка с ценами */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16">
                     {prices.map((item, index) => (
-                        <div
+                        <PriceCard
                             key={index}
-                            className="bg-white rounded-lg shadow-lg p-6 md:p-8 flex flex-col items-center text-center space-y-4"
-                        >
-                            <h3 className="text-xl md:text-2xl font-bold text-black">
-                                {item.title}
-                            </h3>
-                            <div className="space-y-1">
-                                <p className="text-3xl md:text-4xl font-bold text-black">
-                                    {item.price}
-                                </p>
-                                <p className="text-base md:text-lg text-gray-600">
-                                    {item.duration}
-                                </p>
-                            </div>
-                            {item.description && (
-                                <p className="text-sm md:text-base text-gray-600 italic pt-2 border-t border-gray-200">
-                                    {item.description}
-                                </p>
-                            )}
-                        </div>
+                            title={item.title}
+                            price={item.price}
+                            duration={item.duration}
+                            description={item.description}
+                        />
                     ))}
                 </div>
 

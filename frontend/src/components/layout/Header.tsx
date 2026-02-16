@@ -4,26 +4,33 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 import Image from "next/image";
+import { usePathname } from 'next/navigation'
 
 export function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     const [activeSection, setActiveSection] = useState('')
+    const pathname = usePathname()
 
     /* Набор ссылок в панели навигации */
     const menuItems = [
-        { label: 'НАПРАВЛЕНИЯ', href: '#directions' },
-        { label: 'ТРЕНЕРЫ', href: '#coaches' },
-        { label: 'ЛОКАЦИЯ', href: '#location' },
-        { label: 'ГАЛЕРЕЯ', href: '#gallery' },
-        { label: 'ЦЕНЫ', href: '#pricing' },
-        { label: 'ОТЗЫВЫ', href: '#reviews' },
-        { label: 'FAQ', href: '#faq' },
-        { label: 'КОНТАКТЫ', href: '#contacts' },
+        { label: 'ГЛАВНАЯ', href: '/', type: 'page' },
+        { label: 'О КЛУБЕ', href: '/about', type: 'page' },
+        { label: 'НАПРАВЛЕНИЯ', href: '/directions', type: 'page' },
+        { label: 'ТРЕНЕРЫ', href: '/coaches', type: 'page' },
+        { label: 'ЛОКАЦИЯ', href: '/#location', type: 'section' },
+        { label: 'ГАЛЕРЕЯ', href: '/#gallery', type: 'section' },
+        { label: 'ЦЕНЫ', href: '/#pricing', type: 'section' },
+        { label: 'ОТЗЫВЫ', href: '/#reviews', type: 'section' },
+        { label: 'FAQ', href: '/#faq', type: 'section' },
+        { label: 'КОНТАКТЫ', href: '/#contacts', type: 'section' },
     ]
 
     useEffect(() => {
         const handleScroll = () => {
-            const sections = menuItems.map(item => item.href.substring(1))
+            const sections = menuItems
+                .filter(item => item.type === 'section')
+                .map(item => item.href.substring(2)) // убираем "/#"
+
             let foundSection = false
 
             for (const sectionId of sections) {
@@ -31,7 +38,7 @@ export function Header() {
                 if (section) {
                     const rect = section.getBoundingClientRect()
                     if (rect.top <= 150 && rect.bottom >= 150) {
-                        setActiveSection(`#${sectionId}`)
+                        setActiveSection(`/#${sectionId}`)
                         foundSection = true
                         break
                     }
@@ -51,6 +58,15 @@ export function Header() {
         }
     }, [])
 
+    // Функция для определения активности ссылки
+    const isActive = (item: typeof menuItems[0]) => {
+        if (item.type === 'page') {
+            return pathname === item.href
+        } else {
+            return activeSection === item.href
+        }
+    }
+
     return (
         <header className="fixed top-0 left-0 right-0 z-50 bg-[#6B4546] shadow-md">
             <div className="mx-auto max-w-7xl px-4 sm:px-6">
@@ -68,13 +84,13 @@ export function Header() {
                     </Link>
 
                     {/* Навигационная панель для ПК */}
-                    <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
+                    <nav className="hidden lg:flex items-center gap-4 xl:gap-6 overflow-x-auto">
                         {menuItems.map((item) => (
                             <Link
                                 key={item.href}
                                 href={item.href}
-                                className={`text-white text-sm xl:text-base font-medium tracking-wide hover:opacity-80 transition-all pb-1 ${
-                                    activeSection === item.href ? 'border-b-2 border-white opacity-70' : ''
+                                className={`text-white text-xs xl:text-sm font-medium tracking-wide hover:opacity-80 transition-all pb-1 whitespace-nowrap ${
+                                    isActive(item) ? 'border-b-2 border-white opacity-70' : ''
                                 }`}
                             >
                                 {item.label}
@@ -103,7 +119,7 @@ export function Header() {
                                 href={item.href}
                                 onClick={() => setMobileMenuOpen(false)}
                                 className={`block text-white text-base font-medium tracking-wide py-2 hover:opacity-80 transition-opacity ${
-                                    activeSection === item.href ? 'opacity-70 underline' : ''
+                                    isActive(item) ? 'opacity-70 underline' : ''
                                 }`}
                             >
                                 {item.label}

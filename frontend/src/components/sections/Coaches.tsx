@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { coaches } from '@/data/coaches';
 
 const contactIcons = {
     tg: '/images/social-networks/telegram-basic-icon.svg',
@@ -6,39 +7,6 @@ const contactIcons = {
 } as const
 
 export function Coaches() {
-    interface Trainer {
-        name: string;
-        description: string;
-        experience: string;
-        additionalInfo?: string;
-        contacts?: {
-            code: keyof typeof contactIcons;
-            tag: string;
-            url: string;
-        }[];
-        image?: string;
-    }
-
-    const coaches: Trainer[] = [
-        {
-            name: 'Людмила Капоркина',
-            description: 'Тренер по верховой езде и вольтижировке для взрослых.',
-            experience: 'Стаж работы 20 лет.',
-            contacts: [
-                { code: 'tg', tag: '@abcd', url: '' },
-                { code: 'inst', tag: '@abcd', url: ''},
-            ],
-            image: '/images/coaches/PHOTO_7.jpeg',
-        },
-        {
-            name: 'Вера Попова',
-            description: 'Тренер по верховой езде для детей и взрослых.',
-            experience: 'Стаж работы 20 лет.',
-            additionalInfo: 'Веду занятия на русском и немецком языках.',
-            image: '/images/coaches/PHOTO_8.jpeg',
-        },
-    ]
-
     return (
         <section id="coaches" className="py-16 md:py-24 bg-[#F8F5E8]">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
