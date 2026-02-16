@@ -1,3 +1,4 @@
+import React from 'react';
 import Image from 'next/image';
 
 interface DirectionCardProps {
@@ -8,13 +9,13 @@ interface DirectionCardProps {
     imagePosition?: 'left' | 'right';
 }
 
-export default function DirectionCard({
-                                          title,
-                                          description,
-                                          additionalInfo,
-                                          image,
-                                          imagePosition = 'left',
-                                      }: DirectionCardProps) {
+function DirectionCard({
+                           title,
+                           description,
+                           additionalInfo,
+                           image,
+                           imagePosition = 'left',
+                       }: DirectionCardProps) {
     return (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-16 md:mb-24">
             <div className={`space-y-4 ${imagePosition === 'left' ? 'lg:order-3' : ''}`}>
@@ -40,3 +41,5 @@ export default function DirectionCard({
         </div>
     );
 }
+
+export default React.memo(DirectionCard);

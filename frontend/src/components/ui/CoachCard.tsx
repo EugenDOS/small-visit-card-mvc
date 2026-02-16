@@ -1,3 +1,4 @@
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -10,19 +11,14 @@ interface CoachCardProps {
     showLink?: boolean;
 }
 
-const contactIcons = {
-    tg: '/images/social-networks/telegram-basic-icon.svg',
-    inst: '/images/social-networks/instagram-icon.svg',
-} as const;
-
-export default function CoachCard({
-                                      id,
-                                      name,
-                                      description,
-                                      experience,
-                                      image,
-                                      showLink = false,
-                                  }: CoachCardProps) {
+function CoachCard({
+                       id,
+                       name,
+                       description,
+                       experience,
+                       image,
+                       showLink = false,
+                   }: CoachCardProps) {
     const content = (
         <div className="flex flex-col items-center text-center">
             {/* Круглое фото с тенью */}
@@ -66,3 +62,7 @@ export default function CoachCard({
 
     return content;
 }
+
+// Оптимизация с React.memo - компонент не будет перерисовываться,
+// если props не изменились
+export default React.memo(CoachCard);

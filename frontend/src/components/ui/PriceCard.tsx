@@ -1,3 +1,5 @@
+import React from 'react';
+
 interface PriceCardProps {
     title: string;
     price: string;
@@ -5,12 +7,12 @@ interface PriceCardProps {
     description?: string | null;
 }
 
-export default function PriceCard({
-                                      title,
-                                      price,
-                                      duration,
-                                      description,
-                                  }: PriceCardProps) {
+function PriceCard({
+                       title,
+                       price,
+                       duration,
+                       description,
+                   }: PriceCardProps) {
     return (
         <div className="bg-white rounded-lg shadow-lg p-6 md:p-8 flex flex-col items-center text-center space-y-4">
             <h3 className="text-xl md:text-2xl font-bold text-black">
@@ -32,3 +34,5 @@ export default function PriceCard({
         </div>
     );
 }
+
+export default React.memo(PriceCard);
